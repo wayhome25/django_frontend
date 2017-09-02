@@ -8,6 +8,9 @@ class Post(TimeStampedModel):
     title = models.CharField(max_length=180)
     content = models.TextField()
 
+    def __str__(self):
+        return self.title
+
     def get_absolute_url(self):
         return reverse('blog:post_detail', args=[self.pk])
 
